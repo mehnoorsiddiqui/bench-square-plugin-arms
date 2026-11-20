@@ -1,0 +1,13 @@
+{
+  "name": "bench-square-plugin-arms",
+  "owner": {
+    "name": "mehnoorsiddiqui"
+  },
+  "plugins": [
+    {
+      "name": "bench-square",
+      "source": "./plugins/bench-square",
+      "description": "Integrate and consume the APIMatic-generated Square SDK — bundled skills for C#/.NET."
+    }
+  ]
+}

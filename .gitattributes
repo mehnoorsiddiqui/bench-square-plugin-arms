@@ -1,0 +1,2 @@
+# Keep every byte as committed: the plugin copies must match their source commits exactly.
+* -text
