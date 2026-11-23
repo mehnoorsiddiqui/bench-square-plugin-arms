@@ -9,6 +9,7 @@ copied here, byte for byte, in its own commit. Arms pin the commit, never a bran
 |---|---|---|
 | `bench-square 2.0.0 from bench-square-context-plugin@aeebb7c` | bench-square-context-plugin@aeebb7cb71dca00844745e02447589c8e25cf8c3 | 2.0.0 |
 | `bench-square 3.0.0 from bench-square-context-plugin@e8ecef9` | bench-square-context-plugin@e8ecef908e99e7cb0f9d0b92ba982b2d8f7c1d58 | 3.0.0 |
+| `bench-square 3.0.0 + generic1/generic2 guidance from bench-square-context-plugin@b583265` | bench-square-context-plugin@b583265d0d7a15f913f1a9e23e02fd2e856dfcdf (branch skill-generic-3.0.0: e8ecef9 plus two commits that add change-agnostic upgrade guidance to dotnet-integrate-square and dotnet-models; copied from the author's local repo, not yet on GitHub) | 3.0.0 |
 
 Do not edit `plugins/bench-square/` by hand. To add a version, copy that version's publish commit in a new commit
 and pin it from the arm config.
