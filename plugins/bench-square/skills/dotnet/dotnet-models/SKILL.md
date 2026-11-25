@@ -1,6 +1,6 @@
 ---
 name: dotnet-models
-description: Load before building request payloads for an APIMatic .NET SDK in C# or mapping its models onto your own types, and when an SDK upgrade changes a field's type — required members and nullability, OneOf/AnyOf unions, open enums, dates, collections, validation attributes, JSON wire names versus C# property names, and unknown fields.
+description: Load before building request payloads for an APIMatic .NET SDK in C# or mapping its models onto your own types — required members and nullability, OneOf/AnyOf unions, open enums, dates, collections, validation attributes, JSON wire names versus C# property names, and unknown fields.
 ---
 
 # Working with models in an APIMatic .NET SDK
@@ -185,14 +185,6 @@ server's own casing, and compares without constructing one: `instance.Is("raw")`
 The exact signature is `public static bool TryGetKnownValue(string? value, out {EnumType}? result)`, inherited by
 every enum, so `{EnumType}.TryGetKnownValue(...)` needs no extra `using`. This surface is the same in every APIMatic
 .NET SDK; take it from here and do not open `Core/Enum/` to confirm it.
-
-**When an SDK upgrade changes a field's type**, handle it through the new type's public API, never through
-`JsonSerializer`, a `[JsonConverter]` or reflection (that compiles, but it is a defect):
-
-- `string` → enum, written: resolve with `TryGetKnownValue`, and decide explicitly (and report) what an undeclared value does.
-- `string` → enum, compared: use the declared member, as in `x == {EnumType}.{Member}` or `list.Contains({EnumType}.{Member})`. Comparing with the old string constant (`.Any(v => v == "RAW")`) still compiles, but leaves a stringly-typed check on a field the SDK now types.
-- scalar → union: build and read it as *Polymorphic union types* describes.
-- optional → `required`: set it; if the code has no value for it, report that rather than inventing one.
 
 Branch with the generated `Match`, not a `switch`: one `on{Member}` arm per declared value in declaration order,
 then `otherwise`, which receives the raw wire value of anything undeclared. Pass the arms by name — the

@@ -31,7 +31,8 @@ However you start it:
 
 ## Workflow
 
-**If the task upgrades existing code to a new SDK version**, skip the plan-first flow (no `square-planner`, no `square-plan.md`). Before editing, load the companion for each kind of change the new version brings: models, enums or a field whose type changed → `dotnet-models`; operations or request records → `dotnet-calling-endpoints`; environments, retries, timeouts or logging → `dotnet-configuration-resilience`; client setup → `dotnet-client-initialization`; credentials → `dotnet-authentication`; errors → `dotnet-error-handling`. Use the API the companion states and do not open `src/Square/Core/` to work around a changed type: a workaround through serializers or reflection is a defect even when it compiles. Compile errors show only changed types. The new version can also add or tighten a validation attribute (`[StringLength]`, `[MaxLength]`, `[Range]`, `[RegularExpression]`, `[Minimum]`, `[Maximum]`) on a member whose type did not change; the SDK never checks it, and the provider refuses the request at runtime (see `dotnet-models`). So compare those attributes on every member your code sets, old version against new, and check each value your code builds against any new or tighter one. Listing them from both package assemblies is inspection, not a workaround. Keep behaviour the same, and report any behaviour the new version cannot keep.
+**If the task upgrades existing code to a new SDK version**, load `dotnet-migrate-square` before you edit anything and follow it.
+It sets the upgrade workflow; the plan-first flow below is for new implementation work.
 
 **If the user opens with a reported SDK error or unexpected Square behaviour** (not new feature work), go straight to *Step 4 — Fixing SDK errors* below — do not run the plan-first flow for a bug report. Otherwise, for implementation work:
 
