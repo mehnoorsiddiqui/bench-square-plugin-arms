@@ -1,6 +1,6 @@
 ---
 name: "dotnet-integrate-square"
-description: "MANDATORY FIRST STEP for any Square .NET SDK work in C#: integrating Square, or a Square .NET SDK call that errors or behaves unexpectedly. Load it before opening the SDK map or touching any project file — it sets the plan-first workflow (square-plan.md before any code) and the map-grounding rules. .NET/C# only; never load it for another language."
+description: "MANDATORY FIRST STEP for any Square .NET SDK work in C#: integrating Square, upgrading existing code to a new Square .NET SDK version, or a Square .NET SDK call that errors or behaves unexpectedly. Load it before opening the SDK map or touching any project file — it sets the plan-first workflow (square-plan.md before any code) and the map-grounding rules. .NET/C# only; never load it for another language."
 ---
 
 # Square .NET SDK — Workflow (map + skills)
@@ -30,6 +30,9 @@ However you start it:
 - **Name only what you have read.** Never name a claim, header or route of the application as though you knew it exists — unless you have read that code. Name configuration by its binding key, never by a raw environment variable, and give the default the map documents where there is one: a setting you invent a name for is a setting no deployment will supply.
 
 ## Workflow
+
+**If the task upgrades existing code to a new SDK version**, load `dotnet-upgrade-square` before you edit anything and follow it.
+It sets the upgrade workflow; the plan-first flow below is for new implementation work.
 
 **If the user opens with a reported SDK error or unexpected Square behaviour** (not new feature work), go straight to *Step 4 — Fixing SDK errors* below — do not run the plan-first flow for a bug report. Otherwise, for implementation work:
 
