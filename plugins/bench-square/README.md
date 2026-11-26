@@ -8,7 +8,7 @@ One skill set per language. The entry point is that language's getting-started s
 
 | Language | Skill prefix | Skills |
 | --- | --- | --- |
-| C#/.NET | `dotnet-` | `dotnet-authentication`, `dotnet-calling-endpoints`, `dotnet-client-initialization`, `dotnet-configuration-resilience`, `dotnet-error-handling`, `dotnet-getting-started`, `dotnet-integrate-square`, `dotnet-migrate-square`, `dotnet-models`, `dotnet-testing` |
+| C#/.NET | `dotnet-` | `dotnet-authentication`, `dotnet-calling-endpoints`, `dotnet-client-initialization`, `dotnet-configuration-resilience`, `dotnet-error-handling`, `dotnet-getting-started`, `dotnet-integrate-square`, `dotnet-upgrade-square`, `dotnet-models`, `dotnet-testing` |
 
 ## Agents
 

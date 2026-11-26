@@ -31,7 +31,7 @@ However you start it:
 
 ## Workflow
 
-**If the task upgrades existing code to a new SDK version**, load `dotnet-migrate-square` before you edit anything and follow it.
+**If the task upgrades existing code to a new SDK version**, load `dotnet-upgrade-square` before you edit anything and follow it.
 It sets the upgrade workflow; the plan-first flow below is for new implementation work.
 
 **If the user opens with a reported SDK error or unexpected Square behaviour** (not new feature work), go straight to *Step 4 — Fixing SDK errors* below — do not run the plan-first flow for a bug report. Otherwise, for implementation work:
