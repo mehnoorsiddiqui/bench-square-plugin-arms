@@ -17,7 +17,7 @@ Usage companions: `dotnet-client-initialization`, `dotnet-authentication`, `dotn
 | --- | --- |
 | API | Square |
 | NuGet package | `ApimaticBench.Square` (install version-less — see *Install* below) |
-| Source repo | https://github.com/mehnoorsiddiqui/bench-square-sdk-csharp (branch `4.0.0` — the ref this map documents) |
+| Source repo | https://github.com/mehnoorsiddiqui/bench-square-sdk-csharp (branch `5.0.0` — the ref this map documents) |
 | Root namespace | `Square` (the `using` namespace) |
 | Client class | `SquareClient` |
 | Options class | `SquareClientOptions` |
@@ -77,18 +77,18 @@ The SDK source is where the map lives, so **getting it is the first step of SDK 
 ```bash
 # Linux/macOS:
 dir="${TMPDIR:-/tmp}/square-sdk-src/$(date +%Y%m%d-%H%M%S)"
-git clone --filter=blob:none --branch 4.0.0 https://github.com/mehnoorsiddiqui/bench-square-sdk-csharp "$dir"
+git clone --filter=blob:none --branch 5.0.0 https://github.com/mehnoorsiddiqui/bench-square-sdk-csharp "$dir"
 # Reuse "$dir" for the rest of your session (it is your clone path).
 ```
 
 ```powershell
 # Windows (PowerShell):
 $dir = "$env:TEMP\square-sdk-src\$(Get-Date -Format yyyyMMdd-HHmmss)"
-git clone --filter=blob:none --branch 4.0.0 https://github.com/mehnoorsiddiqui/bench-square-sdk-csharp $dir
+git clone --filter=blob:none --branch 5.0.0 https://github.com/mehnoorsiddiqui/bench-square-sdk-csharp $dir
 # Reuse $dir for the rest of your session (it is your clone path).
 ```
 
-The source you read is branch `4.0.0`: a branch is a moving target, not a pin — it can move after this plugin ships, and then the map you read describes code the package no longer matches. If a name from the map fails to compile, trust the compiler, re-read the source file the map's row names, and report the mismatch; never patch around it from memory.
+The source you read is branch `5.0.0`: a branch is a moving target, not a pin — it can move after this plugin ships, and then the map you read describes code the package no longer matches. If a name from the map fails to compile, trust the compiler, re-read the source file the map's row names, and report the mismatch; never patch around it from memory.
 
 The clone stays in the system temp directory, and `square-plan.md` never carries its path — the plan must stay portable.
 
