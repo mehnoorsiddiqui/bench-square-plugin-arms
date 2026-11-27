@@ -182,6 +182,9 @@ be constructed in code. Resolve a raw value with `{EnumType}.TryGetKnownValue(va
 known)` — exact, case-sensitive — and guard a received value with `instance.IsKnownValue()`. A server value
 the SDK does not declare still deserializes (enums are open on reads), round-trips unchanged with the
 server's own casing, and compares without constructing one: `instance.Is("raw")` or `instance == "raw"`.
+The exact signature is `public static bool TryGetKnownValue(string? value, out {EnumType}? result)`, inherited by
+every enum, so `{EnumType}.TryGetKnownValue(...)` needs no extra `using`. This surface is the same in every APIMatic
+.NET SDK; take it from here and do not open `Core/Enum/` to confirm it.
 
 Branch with the generated `Match`, not a `switch`: one `on{Member}` arm per declared value in declaration order,
 then `otherwise`, which receives the raw wire value of anything undeclared. Pass the arms by name — the
